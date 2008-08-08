@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'fakeui'
   s.version = "0.1"
-  s.summary = "Cocoa View Layer Stubs for testing Cocoa applications sans a UI"
+  s.summary = "a view stub framework for testing rubycocoa applications"
   s.has_rdoc = true
   s.files = ['README', 'Rakefile', 'lib/**/*', 'spec/**/*'].map {|d| Dir.glob(d)}.flatten
   s.extra_rdoc_files = ['README']
