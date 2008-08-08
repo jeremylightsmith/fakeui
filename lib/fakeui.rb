@@ -1,8 +1,6 @@
 # this file loads a fake ui, used for unit testing
 require 'osx/cocoa'  # this is used for constants and such, we should get rid of it for testing
 
-$LOAD_PATH.unshift "#{CHIZZLE_ROOT}/spec"
-
 require 'fakeui/outline_view'
 require 'fakeui/tab_view'
 require 'fakeui/table_view'
