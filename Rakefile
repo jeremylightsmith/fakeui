@@ -10,6 +10,11 @@ desc "generate a gem: in general, github should do this for you"
 task :gem do
   `rm -rf *.gem`
   spec = eval(File.read(File.dirname(__FILE__) + "/fakeui.gemspec"))
+  expected_files = ['README', 'Rakefile', 'lib/**/*', 'spec/**/*'].map {|d| Dir.glob(d)}.flatten
+  unless spec.files.sort == expected_files.sort
+    raise "expected gemspec to be \n\t#{expected_files.sort.inspect}\n" +
+          "but was\n\t#{spec.files.sort.inspect}"
+  end
   Gem::Builder.new(spec).build
 end
 
